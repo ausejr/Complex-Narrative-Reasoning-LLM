@@ -4,86 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b14ad04-d88d-45dc-890e-994bedb7992a" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/IF-QSR.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baseline/cot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/baseline/direct.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/big_options.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/options.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/bddz/event.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/bddz/evidence.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/bddz/role.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/pjmsa/event.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/pjmsa/evidence.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/pjmsa/role.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/wyg/event.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/wyg/evidence.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataset/wyg/role.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/FA-SR-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/FA-SR-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/FA-SR-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/SR-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/SR-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/SR-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/cot/cot.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/cot/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/direct/direct.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/direct/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/predefined_cues.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/IF-QSR/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/IF-QSR/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/IF-QSR/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/QSR/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/QSR/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/QSR/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/cot/cot.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/cot/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/direct/direct.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/direct/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/predefined_cues.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/FA-SR-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/FA-SR-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/FA-SR-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/SR-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/SR-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/SR-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/cot/cot.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/cot/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/direct/direct.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/direct/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/predefined_cues.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random-DH/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random-DH/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random-DH/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random/big_options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random/options1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IF-QSR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QSR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/random-DH.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/random_1.py" afterDir="false" />
-    </list>
+    <list default="true" id="5b14ad04-d88d-45dc-890e-994bedb7992a" name="更改" comment="11" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -277,6 +198,15 @@
       <option name="presentableId" value="Default" />
       <updated>1750319359632</updated>
     </task>
+    <task id="LOCAL-00001" summary="11">
+      <option name="closed" value="true" />
+      <created>1750322939871</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750322939871</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,5 +258,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
 </project>
