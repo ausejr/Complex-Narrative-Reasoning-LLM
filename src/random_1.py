@@ -10,11 +10,11 @@ import concurrent.futures
 warnings.filterwarnings("ignore", category=UserWarning)
 
 llm2 = ChatOpenAI(
-    model="deepseek-chat",
+    model="",
     temperature=0.0,
     max_tokens=8192,
-    openai_api_base="https://api.deepseek.com/v1",
-    openai_api_key="sk-c39bdc242cef413fbf7435e85f31f2e6",
+    openai_api_base="",
+    openai_api_key="",
     streaming=True,
     response_format={
         'type': 'json_object'
@@ -22,11 +22,11 @@ llm2 = ChatOpenAI(
     callbacks=[StreamingStdOutCallbackHandler()]
 )
 llm = ChatOpenAI(
-    model="deepseek-chat",
+    model="",
     temperature=0.0,
     max_tokens=8192,
-    openai_api_base="https://api.deepseek.com/v1",
-    openai_api_key="sk-c39bdc242cef413fbf7435e85f31f2e6",
+    openai_api_base="",
+    openai_api_key="",
     streaming=True,
     callbacks=[StreamingStdOutCallbackHandler()]
 )
