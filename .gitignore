@@ -1,0 +1,37 @@
+# PyCharm specific files
+.idea/                 # PyCharm的配置文件夹
+*.iml
+*.ipr
+*.iws
+
+# Python specific files
+__pycache__/           # Python编译生成的缓存文件
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/                  # 虚拟环境文件夹 (非常重要，不应上传)
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# OS generated files
+.DS_Store              # macOS的隐藏文件
+Thumbs.db              # Windows的缩略图缓存
+
+# Data / Models (如果文件过大不宜直接上传到GitHub，建议只提供下载链接)
+/data/*.pkl
+/data/*.zip
+/data/*.tar.gz
+/models/               # 大型模型权重文件夹
+/checkpoints/          # 模型训练检查点
+
+# Results / Logs (如果日志文件很大，只上传汇总结果)
+/results/logs/         # 具体的日志文件
+/results/*.log
+/results/*.txt

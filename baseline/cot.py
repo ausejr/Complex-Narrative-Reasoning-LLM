@@ -1,0 +1,92 @@
+import json
+from langchain_openai import ChatOpenAI
+from langchain_core.callbacks import StreamingStdOutCallbackHandler
+import warnings
+from langchain.schema import HumanMessage
+warnings.filterwarnings("ignore", category=UserWarning)
+
+
+llm2 = ChatOpenAI(
+    model="",
+    temperature=0.0,
+    max_tokens=8192,
+    openai_api_base="",
+    openai_api_key="",
+    streaming=True,
+    response_format={
+        'type': 'json_object'
+    },
+    callbacks=[StreamingStdOutCallbackHandler()]
+)
+llm = ChatOpenAI(
+    model="",
+    temperature=0.0,
+    max_tokens=8192,
+    openai_api_base="",
+    openai_api_key="",
+    streaming=True,
+    callbacks=[StreamingStdOutCallbackHandler()]
+)
+
+
+with open(r"dataset/pjmsa/role.json", 'r', encoding='utf-8') as f:
+    role = json.load(f)
+with open(r"dataset/pjmsa/evidence.json", 'r', encoding='utf-8') as f:
+    evidence = json.load(f)
+with open(r"dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
+    event = json.load(f)
+
+
+def identify_obstacle():
+    prompt = f"""
+     任务：找出真相
+     -------------------------
+     案件信息：
+     {case_info}
+     -------------------------
+     思考方式：
+     你始终遵守**Let's think step by step**的规则；
+     根据案件信息，通过多步推理和分析，最终找出真凶。
+     当你的思考足够充分，认为已经找到了真凶时，请进入“输出阶段”。
+     -------------------------
+     严格按照下面的 JSON 格式输出：
+     {{
+       "thinking_process": [
+         {{
+           "step": <当前思考的步骤序号>,
+           "analysis": "<当前思考的内容>"
+         }}
+         // 可以有更多思考步骤，直到你认为可以得出结论
+       ],
+       "conclusion": {{
+         "suspect": "凶手>",
+         "motive":"<直接导火索(对应原文中的段落，必须是嫌疑人能直接感觉到的，私下的不算)以及深层驱动因素>"
+         "modus_operandi": "<具体作案手法与过程>",
+         "key_clue": [
+         {{
+          "clue_description": "<案件中所有疑点，有一个都不能漏>",
+          "implication": "<这条线索在推理中的意义>"
+         }},
+         // 更多关键线索
+       ]
+        }}
+     }}
+     """
+
+    llm_output = llm2.invoke([HumanMessage(content=prompt)]).content
+    parsed = json.loads(llm_output)
+    return parsed
+
+if __name__ == "__main__":
+    case_info = f""" -角色信息:{role} -物品信息: {evidence}  -事件信息(完全正确): {event}"""
+    res1=identify_obstacle()
+
+
+
+
+
+
+
+
+
+

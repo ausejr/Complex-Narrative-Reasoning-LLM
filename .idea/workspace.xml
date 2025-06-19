@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b14ad04-d88d-45dc-890e-994bedb7992a" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/IF-QSR.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseline/cot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseline/direct.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/big_options.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/options.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/bddz/event.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/bddz/evidence.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/bddz/role.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/pjmsa/event.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/pjmsa/evidence.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/pjmsa/role.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/wyg/event.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/wyg/evidence.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/wyg/role.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/FA-SR-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/FA-SR-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/FA-SR-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/SR-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/SR-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/SR-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/cot/cot.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/cot/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/direct/direct.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/direct/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/predefined_cues.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/bddz/random/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/IF-QSR/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/IF-QSR/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/IF-QSR/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/QSR/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/QSR/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/QSR/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/cot/cot.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/cot/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/direct/direct.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/direct/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/predefined_cues.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/pjmsa/random/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/FA-SR-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/FA-SR-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/FA-SR-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/SR-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/SR-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/SR-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/cot/cot.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/cot/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/direct/direct.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/direct/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/predefined_cues.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random-DH/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random-DH/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random-DH/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random/big_options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random/options1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result_clue_coverage/wyg/random/score.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IF-QSR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/QSR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/random-DH.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/random_1.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2yiZTGf6MweezT1BAqi0LmMOS2c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.IF-QSR.executor": "Run",
+    "Python.random-DH.executor": "Run",
+    "Python.random_1 (1).executor": "Run",
+    "Python.random_1.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/pycharm/project/IF-QSR/melt",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pycharm\project\IF-QSR\melt" />
+      <recent name="D:\pycharm\project\IF-QSR\baseline" />
+      <recent name="D:\pycharm\project\IF-QSR" />
+      <recent name="D:\pycharm\project\IF-QSR\result" />
+      <recent name="D:\pycharm\project\IF-QSR\dataset" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pycharm\project\IF-QSR\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.random_1 (1)">
+    <configuration name="IF-QSR" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IF-QSR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\pycharm\project\IF-QSR\src\IF-QSR.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="IF-QSR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="random-DH" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IF-QSR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\pycharm\project\IF-QSR\src\random-DH.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="random_1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IF-QSR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/random_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="random_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IF-QSR" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\pycharm\project\IF-QSR\src\random_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.random_1 (1)" />
+        <item itemvalue="Python.random_1" />
+        <item itemvalue="Python.IF-QSR" />
+        <item itemvalue="Python.random-DH" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-abccbe9d933a-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.428" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="5b14ad04-d88d-45dc-890e-994bedb7992a" name="更改" comment="" />
+      <created>1750319359632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750319359632</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1cef5da8-491d-4ee9-87b4-a99b24a40ff4" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1cef5da8-491d-4ee9-87b4-a99b24a40ff4">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
