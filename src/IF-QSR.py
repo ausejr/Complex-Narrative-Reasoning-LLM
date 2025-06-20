@@ -38,7 +38,7 @@ with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
 
-def case_process():
+def information_fusion_annotation():
     prompt = f"""
     你是一名资深的案件分析师，擅长整合信息并找出案件中的疑点。我将提供三份案件相关信息：物品清单、事件时间线和人物角色描述。请你仔细阅读并完成以下任务：
 
@@ -67,7 +67,7 @@ def case_process():
     llm_output = llm.invoke([HumanMessage(content=prompt)]).content
     return llm_output
 
-def identify_obstacle(info, answer_info, answer, step, n):
+def structured_reasoning(info, answer_info, answer, step, n):
     prompt_head = f"""
     最终任务：找出真相
     完成最终任务需要的工作如下： 
@@ -195,6 +195,9 @@ def identify_obstacle(info, answer_info, answer, step, n):
     parsed = json.loads(llm_output)
     return parsed
 
+
+
+
 def decompose_obstacle(obstacle):
     prompt = f"""
     你是一名资深侦探，擅长理解问题，为了解决复杂笼统的问题，你的任务是将这些复杂问题**分解**成一系列清晰、可调查的子问题。
@@ -229,7 +232,7 @@ def decompose_obstacle(obstacle):
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
             # 提交所有任务到线程池
             future_to_question = {
-                executor.submit(answer_sub_question, q, 1): q
+                executor.submit(heuristic_hypothesis, q, 1): q
                 for q in sub_questions
             }
 
@@ -240,7 +243,7 @@ def decompose_obstacle(obstacle):
         # return solve(obstacle,sub_answer,before_info)
         return sub_answer
 
-def answer_sub_question(obstacle, depth):
+def heuristic_hypothesis(obstacle, depth):
     prompt = f"""
     在案件调查中，某些关键信息（例如：精确的作案过程、嫌疑人未暴露的动机）不可能被直接记录。
     你的任务是根据现有案件信息，运用你的专业侦探直觉和逻辑推理，对问题 {obstacle} 给出最高质的假设答案。
@@ -272,14 +275,14 @@ def answer_sub_question(obstacle, depth):
             parsed.get("answer_q", "") != "无相关信息" and
             parsed.get("next_step", "") != "无"
             and depth <= 1):
-        next_answer = answer_sub_question(parsed.get("next_step", ""), depth + 1)
+        next_answer = heuristic_hypothesis(parsed.get("next_step", ""), depth + 1)
         return f"""子问题：{parsed.get("parent_q", "")} 答案：{parsed.get("answer_q", "")}\n{next_answer}"""
     else:
         return f"""子问题：{parsed.get("parent_q", "")} 答案：{parsed.get("answer_q", "")}"""
 
 
 if __name__ == "__main__":
-    event=case_process()
+    event=information_fusion_annotation()
     case_info = f"""-事件信息: {event} -角色信息:{role} -物品信息: {evidence}"""
     options = []
     big_options = []
@@ -296,7 +299,7 @@ if __name__ == "__main__":
         while step != 7 - i:
             n = n + 1
             print(bg)
-            res1 = identify_obstacle(bg, options, temp_options, step, n)
+            res1 = structured_reasoning(bg, options, temp_options, step, n)
             step = res1.get("finish", 0)
             if step == 7 - i:
                 big_options.append(res1.get(keys[i - 1], []))

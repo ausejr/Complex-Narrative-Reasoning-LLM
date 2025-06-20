@@ -39,7 +39,7 @@ with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
 
-def identify_obstacle(answer, step):
+def random(answer, step):
     prompt_head = f"""
     最终任务：找出真相
     完成最终任务需要的工作如下： 
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     conversation_history = []
     step = 3
     while step != 7 - 3:
-        res1 = identify_obstacle(temp_options, step)
+        res1 = random(temp_options, step)
         step = res1.get("finish", 0)
         if step == 7 - 3:
             big_options.append(res1.get("finally_completely_suspect_modus_operandi", []))

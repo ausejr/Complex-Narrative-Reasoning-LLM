@@ -37,37 +37,7 @@ with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
 
-
-def case_process():
-    prompt = f"""
-    你是一名资深的案件分析师，擅长整合信息并找出案件中的疑点。我将提供三份案件相关信息：物品清单、事件时间线和人物角色描述。请你仔细阅读并完成以下任务：
-
-    1.  **整合并扩充事件时间线：** 以事件时间线为主干，将物品清单和人物角色描述中的相关信息融入到对应的时间节点。
-        * **物品信息补充：** 将事件时间线出现物品的详细描述、发现位置以及任何相关信息补充到对应的事件描述中。
-        * **人物信息关联分析：** 将人物的性格与他们在事件时间线中的行为进行对比和质疑  2.将人物角色的证词与他们在事件时间线中的行为进行对比和融合。如果证词与事件描述存在印证、矛盾。 
-    2.  **添加案件疑点批注（基于常识推理）：
-           ** 整合后的案件信息中存在可疑、不合常理、逻辑冲突或需要进一步调查的地方，使用"【批注：...】"的形式进行标注。
-           ** 这些批注应基于常识和推理，跨越时间线，并能指出潜在的矛盾、未解释的现象、可能存在的误导信息或值得深挖的线索。
-    3.批注物证信息，在事件时间线结束之后，对物证信息进行批注
-
-    ----------------------
-    要求：
-    1.关于事件的描述、物证必须是严格的原文，不能少任何一条时间线  且任何一条时间线的里面的任何内容也不能少
-    2.每条时间线、物证信息后面必须有批注
-    ----------------------
-
-    **以下是待整合的案件信息：**
-    事件信息:{event}
-    角色信息:{role}
-    物品信息:{evidence}
-
-    关于时间线的相关信息输出完毕时候立刻结束，不要输出总结性的信息，比如 **关键疑点总结** 、**建议进一步调查**  
-    不用严格按照json格式
-    """
-    llm_output = llm.invoke([HumanMessage(content=prompt)]).content
-    return llm_output
-
-def identify_obstacle(info, answer_info, answer, step,n):
+def structured_reasoning(info, answer_info, answer, step,n):
     prompt_head = f"""
     最终任务：找出真相
     完成最终任务需要的工作如下： 
@@ -194,6 +164,8 @@ def identify_obstacle(info, answer_info, answer, step,n):
     parsed = json.loads(llm_output)
     return parsed
 
+
+
 def decompose_obstacle(obstacle):
     prompt = f"""
     你是一名资深侦探，擅长理解问题，为了解决复杂笼统的问题，你的任务是将这些复杂问题**分解**成一系列清晰、可调查的子问题。
@@ -227,7 +199,7 @@ def decompose_obstacle(obstacle):
         # 使用线程池并行处理所有子问题
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
             future_to_question = {
-                executor.submit(answer_sub_question, q, 1): q
+                executor.submit(heuristic_hypothesis, q, 1): q
                 for q in sub_questions
             }
 
@@ -238,7 +210,9 @@ def decompose_obstacle(obstacle):
         # return solve(obstacle,sub_answer,before_info)
         return sub_answer
 
-def answer_sub_question(obstacle, depth):
+
+
+def heuristic_hypothesis(obstacle, depth):
     prompt = f"""
     在案件调查中，某些关键信息（例如：精确的作案过程、嫌疑人未暴露的动机）不可能被直接记录。
     你的任务是根据现有案件信息，运用你的专业侦探直觉和逻辑推理，对问题 {obstacle} 给出最高质的假设答案。
@@ -270,36 +244,10 @@ def answer_sub_question(obstacle, depth):
             parsed.get("answer_q", "") != "无相关信息" and
             parsed.get("next_step", "") != "无"
             and depth <= 1):
-        next_answer = answer_sub_question(parsed.get("next_step", ""), depth + 1)
+        next_answer = heuristic_hypothesis(parsed.get("next_step", ""), depth + 1)
         return f"""子问题：{parsed.get("parent_q", "")} 答案：{parsed.get("answer_q", "")}\n{next_answer}"""
     else:
         return f"""子问题：{parsed.get("parent_q", "")} 答案：{parsed.get("answer_q", "")}"""
-
-def answer_sub_question1(obstacle):
-    prompt = f"""
-    在案件调查中，某些关键信息（例如：精确的作案过程、嫌疑人未暴露的动机）不可能被直接记录。
-    你的任务是根据现有案件信息，运用你的专业侦探直觉和逻辑推理，对问题 {obstacle} 给出最高质的假设答案。
-
-    案件信息：{case_info}
-    ----------
-    重要⚠️：常识性侦探准则：
-    1.时间线核查:  
-        受害人症状发作的时间点，与嫌疑人接触或投毒的时间点，存在矛盾。 
-    2.空间位置核查: 
-        如果作案发生时有多个人在场且具备观察或干预的能力，那么单一凶手进行的作案行为其机会几乎为零。
-        在这种情况下，除非有明确证据表明凶手有能力制造或利用独处/无干扰的环境（例如：制造混乱、引开他人、受害人高度虚弱或分心、环境极度昏暗等），否则应优先排除在此类环境下单独作案的可能性。
-    3.行为模式与物理定律核查:
-        检查证词和事件描述是否符合基本的物理定律（例如：一个人不可能在短时间内从A地瞬间移动到B地，除非有交通工具且距离合理）。
-    ----------
-    严格按照下面的 JSON 格式输出：
-    {{
-       answer_q:<高质推理假设的答案/无相关信息>,
-       key:2
-    }}
-    """
-    llm_output = llm2.invoke([HumanMessage(content=prompt)]).content
-    parsed = json.loads(llm_output)
-    return  parsed.get("answer_q","")
 
 
 if __name__ == "__main__":
@@ -319,7 +267,7 @@ if __name__ == "__main__":
         while step != 7 - i:
             n=n+1
             print(bg)
-            res1 = identify_obstacle(bg, options, temp_options, step,n)
+            res1 = structured_reasoning(bg, options, temp_options, step,n)
             step = res1.get("finish", 0)
             if step == 7 - i:
                 big_options.append(res1.get(keys[i - 1], []))

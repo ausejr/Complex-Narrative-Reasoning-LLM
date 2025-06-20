@@ -29,7 +29,7 @@ with open(r"dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
 
 case_info = f""" -角色信息:{role} -物品信息: {evidence}  -事件信息(完全正确): {event}"""
 
-def identify_obstacle():
+def reasoning():
     prompt = f"""
     任务：找出真相
     ---------------------------------
@@ -54,7 +54,7 @@ def identify_obstacle():
     return parsed
 
 if __name__ == "__main__":
-    res1=identify_obstacle()
+    res1=reasoning()
 
 
 

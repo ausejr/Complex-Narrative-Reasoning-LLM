@@ -37,7 +37,7 @@ with open(r"dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
 
-def identify_obstacle():
+def reasoning():
     prompt = f"""
      任务：找出真相
      -------------------------
@@ -79,7 +79,7 @@ def identify_obstacle():
 
 if __name__ == "__main__":
     case_info = f""" -角色信息:{role} -物品信息: {evidence}  -事件信息(完全正确): {event}"""
-    res1=identify_obstacle()
+    res1=reasoning()
 
 
 

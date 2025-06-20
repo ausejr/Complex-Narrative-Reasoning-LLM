@@ -38,7 +38,7 @@ with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
 
-def identify_obstacle(answer, step):
+def random(answer, step):
     prompt_head = f"""
     最终任务：找出真相
     完成最终任务需要的工作如下： 
@@ -129,7 +129,7 @@ def decompose_obstacle(obstacle):
         # 使用线程池并行处理所有子问题
         with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
             future_to_question = {
-                executor.submit(answer_sub_question, q, 1): q
+                executor.submit(heuristic_hypothesis, q, 1): q
                 for q in sub_questions
             }
 
@@ -138,7 +138,7 @@ def decompose_obstacle(obstacle):
                 sub_answer.append(result)
         return sub_answer
 
-def answer_sub_question(obstacle, depth):
+def heuristic_hypothesis(obstacle, depth):
     prompt = f"""
     在案件调查中，某些关键信息（例如：精确的作案过程、嫌疑人未暴露的动机）不可能被直接记录。
     你的任务是根据现有案件信息，运用你的专业侦探直觉和逻辑推理，对问题 {obstacle} 给出最高质的假设答案。
@@ -169,7 +169,7 @@ def answer_sub_question(obstacle, depth):
             parsed.get("answer_q", "") != "无相关信息" and
             parsed.get("next_step", "") != "无"
             and depth <= 1):
-        next_answer = answer_sub_question(parsed.get("next_step", ""), depth + 1)
+        next_answer = heuristic_hypothesis(parsed.get("next_step", ""), depth + 1)
         return f"""子问题：{parsed.get("parent_q", "")} 答案：{parsed.get("answer_q", "")}\n{next_answer}"""
     else:
         return f"""子问题：{parsed.get("parent_q", "")} 答案：{parsed.get("answer_q", "")}"""
@@ -186,7 +186,7 @@ if __name__ == "__main__":
     conversation_history = []
     step = 3
     while step != 7 - 3:
-        res1 = identify_obstacle(temp_options, step)
+        res1 = random(temp_options, step)
         step = res1.get("finish", 0)
         if step == 7 - 3:
             big_options.append(res1.get("finally_completely_suspect_modus_operandi", []))
