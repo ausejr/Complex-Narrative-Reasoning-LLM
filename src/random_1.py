@@ -38,7 +38,7 @@ with open(r"../dataset/pjmsa/evidence.json", 'r', encoding='utf-8') as f:
 with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
-
+##*******************      random     **************************
 def random(answer, step):
     prompt_head = f"""
     最终任务：找出真相

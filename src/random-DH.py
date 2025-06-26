@@ -37,7 +37,7 @@ with open(r"../dataset/pjmsa/evidence.json", 'r', encoding='utf-8') as f:
 with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
-
+##*******************      random     **************************
 def random(answer, step):
     prompt_head = f"""
     最终任务：找出真相
@@ -98,6 +98,11 @@ def random(answer, step):
     parsed = json.loads(llm_output)
     return parsed
 
+
+
+
+
+##*******************      Q     **************************
 def decompose_obstacle(obstacle):
     prompt = f"""
     你是一名资深侦探，擅长理解问题，为了解决复杂笼统的问题，你的任务是将这些复杂问题**分解**成一系列清晰、可调查的子问题。

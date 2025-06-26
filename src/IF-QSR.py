@@ -37,7 +37,7 @@ with open(r"../dataset/pjmsa/evidence.json", 'r', encoding='utf-8') as f:
 with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
-
+##*******************      IF     **************************
 def information_fusion_annotation():
     prompt = f"""
     你是一名资深的案件分析师，擅长整合信息并找出案件中的疑点。我将提供三份案件相关信息：物品清单、事件时间线和人物角色描述。请你仔细阅读并完成以下任务：
@@ -67,6 +67,9 @@ def information_fusion_annotation():
     llm_output = llm.invoke([HumanMessage(content=prompt)]).content
     return llm_output
 
+
+
+##*******************      SR     **************************
 def structured_reasoning(info, answer_info, answer, step, n):
     prompt_head = f"""
     最终任务：找出真相
@@ -197,7 +200,7 @@ def structured_reasoning(info, answer_info, answer, step, n):
 
 
 
-
+##*******************      Q     **************************
 def decompose_obstacle(obstacle):
     prompt = f"""
     你是一名资深侦探，擅长理解问题，为了解决复杂笼统的问题，你的任务是将这些复杂问题**分解**成一系列清晰、可调查的子问题。
