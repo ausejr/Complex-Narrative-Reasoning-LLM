@@ -30,12 +30,13 @@ llm = ChatOpenAI(
     callbacks=[StreamingStdOutCallbackHandler()]
 )
 
-with open(r"../dataset/pjmsa/role.json", 'r', encoding='utf-8') as f:
+with open(r"../dataset/The Beer Murder/role.json", 'r', encoding='utf-8') as f:
     role = json.load(f)
-with open(r"../dataset/pjmsa/evidence.json", 'r', encoding='utf-8') as f:
+with open(r"../dataset/The Beer Murder/evidence.json", 'r', encoding='utf-8') as f:
     evidence = json.load(f)
-with open(r"../dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
+with open(r"../dataset/The Beer Murder/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
+
 
 ##*******************      IF     **************************
 def information_fusion_annotation():
@@ -328,10 +329,10 @@ if __name__ == "__main__":
             print(temp_options)
             options.append(temp_options)
 
-    with open(r"../database/big_options.json", 'w', encoding='utf-8') as f:
+    with open(r"../post_run_knowledge_base/big_options.json", 'w', encoding='utf-8') as f:
         json.dump(big_options, f, ensure_ascii=False, indent=4)
 
-    with open(r"../database/options.json", 'w', encoding='utf-8') as f:
+    with open(r"../post_run_knowledge_base/options.json", 'w', encoding='utf-8') as f:
         json.dump(options, f, ensure_ascii=False, indent=4)
 
 

@@ -29,13 +29,16 @@ llm = ChatOpenAI(
 )
 
 
-with open(r"dataset/pjmsa/role.json", 'r', encoding='utf-8') as f:
+with open(r"../dataset/The Beer Murder/role.json", 'r', encoding='utf-8') as f:
     role = json.load(f)
-with open(r"dataset/pjmsa/evidence.json", 'r', encoding='utf-8') as f:
+with open(r"../dataset/The Beer Murder/evidence.json", 'r', encoding='utf-8') as f:
     evidence = json.load(f)
-with open(r"dataset/pjmsa/event.json", 'r', encoding='utf-8') as f:
+with open(r"../dataset/The Beer Murder/event.json", 'r', encoding='utf-8') as f:
     event = json.load(f)
 
+
+
+case_info = f""" -角色信息:{role} -物品信息: {evidence}  -事件信息(完全正确): {event}"""
 
 def reasoning():
     prompt = f"""
@@ -78,7 +81,6 @@ def reasoning():
     return parsed
 
 if __name__ == "__main__":
-    case_info = f""" -角色信息:{role} -物品信息: {evidence}  -事件信息(完全正确): {event}"""
     res1=reasoning()
 
 
