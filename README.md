@@ -23,8 +23,8 @@ This project requires Python **3.12**.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ausejr/ComplexNarrativeReasoning-LLM.git](https://github.com/ausejr/ComplexNarrativeReasoning-LLM.git)
-    cd ComplexNarrativeReasoning-LLM
+    git clone https://github.com/ausejr/Complex-Narrative-Reasoning-LLM.git
+    cd Complex-Narrative-Reasoning-LLM
     ```
 2.  **Create and activate a virtual environment:**
     ```bash
